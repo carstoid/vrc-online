@@ -1,0 +1,374 @@
+:root {
+  --color-primary: #037cff;
+}
+
+@font-face {
+    font-family: 'ForeignFamiliar';
+    font-style: normal;
+    font-weight: normal;
+    src: local('ForeignFamiliar'), url('../fonts/FreeStuffVector.otf') format("opentype");
+    color: var(--color-primary);
+}
+
+body {
+  height: 100%;
+  font-family: "ForeignFamiliar", sans-serif;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8em;
+  color: var(--color-primary);
+}
+
+h1, h2, h3 {
+  text-transform: capitalize;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+/*
+gradient background doesn't work with status bar on safari?
+background: linear-gradient(rgb(4,7,198), rgb(0,108,181));
+background-repeat: no-repeat;
+background-attachment: fixed-top;
+*/
+
+#header {
+  text-align: center;
+  margin: 0em;
+  padding: 0.5em;
+  font-size: 3em;
+  border-bottom: 3px dotted var(--color-primary);
+}
+
+#feedback-layer {
+  position: fixed;
+  z-index: 3000;
+
+}
+
+#interface-container {
+  position: fixed;
+  width: 100vw;
+  pointer-events: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+#nav-main {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px;
+}
+
+#nav-map {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 2em;
+  justify-content: center;
+}
+
+#photostream-panel {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #ffffff;
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#map-panel {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+}
+
+
+#image-capture {
+  align-self: center;
+  flex-grow: 1;
+  pointer-events: auto;
+  background: var(--color-primary);
+  width: 70vw;
+  padding: 2em;
+  border-radius: 1em;
+  margin: 2em;
+  margin-top: 0;
+}
+
+#objects-list {
+  display: flex;
+  align-items: top;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1em;
+}
+
+#image-list {
+  margin: 1em;
+  background: var(--color-primary);
+}
+
+#info-panel {
+  margin: 0em;
+  padding: 1em;
+  background: var(--color-primary);
+}
+
+#places-panel {
+  pointer-events: auto;
+  margin: 0em;
+  padding: 1em;
+}
+
+#canvas {
+  display: none;
+}
+
+/* classes, including material design drop shadows */
+
+#mapid { height: 180px; }
+
+
+.obj-title {
+  text-align: center;
+  font-size: 2em;
+  padding: 0.5em;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.form-input{
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  font-family: "Courier", courier, monospace;
+  color: var(--color-primary);
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.hidden {
+  display: none;
+}
+
+.obj-image {
+  padding: 1em;
+}
+
+.panel-note {
+    text-align: center;
+    padding: 0.25em;
+}
+
+.btn-upload {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  border: 2px dotted var(--color-primary);
+  font-size: 1.8em;
+  padding: 0.2em;
+}
+.link-fullwidth {
+  text-align: center;
+  display: block;
+  color: white;
+  border: 2px solid white;
+  padding: 2em;
+}
+
+.text-panel {
+  padding: 4em;
+}
+
+/* leaflet zoom button overrides */
+.leaflet-bar {
+  background: blue;
+}
+.leaflet-control-zoom {
+  background: blue;
+}
+.leaflet-control-zoom-in {
+  background: blue;
+}
+
+.btn-panel-nav {
+  display: flex;
+}
+
+.btn-nav-inpanel {
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+  font-size: 1.5em;
+  text-decoration: none;
+  border-top: 2px solid var(--color-primary);
+}
+
+.btn-nav-standalone {
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+  font-size: 1.5em;
+  text-decoration: none;
+  border: 2px solid var(--color-primary);
+  border-radius: 0.5em;
+  margin-right: 0.5em;
+}
+
+.btn-generic {
+  color: inherit;
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+}
+
+.btn-column-set {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+}
+
+.right {
+  align-items: flex-end;
+}
+
+.btn-column {
+  font-weight: bold;
+  font-size: 1em;
+  outline: none;
+  color: white;
+  border: none;
+  text-align: center;
+  width: 3em;
+  height: 3.5em;
+  background: var(--color-primary);
+  padding: 0.75em;
+  font-family: "ForeignFamiliar", sans-serif;
+}
+
+.btn-top {
+  border-top-left-radius: 2em;
+}
+
+.btn-bottom {
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+.status-indicator {
+  font-size: 0.5em;
+  color: white;
+  display: inline-block;
+  padding: 0.5em;
+  border: 1px solid white;
+  border-radius: 1em;
+}
+
+.button-left-large {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  background: var(--color-primary);
+  border-top-right-radius: 4em;
+  border-bottom-right-radius: 4em;
+}
+
+.button-left-med {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  padding: 1em;
+  background: var(--color-primary);
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
+}
+
+
+.object-single {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 75vw;
+  height: 75vh;
+  background: white;
+  padding: 0em;
+  margin: 1em;
+  border: 3px solid var(--color-primary);
+  border-radius: 1em;
+}
+
+.object-single h1, .object-single h2, .object-single p {
+    color: var(--color-primary);
+}
+
+.image-single {
+  position: absolute;
+  max-width: 300px;
+  background: var(--color-primary);
+}
+
+
+.card {
+  background: #fff;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+}
+
+.name-input {
+  font-size: 18px;
+  width: 100%;
+  border: 0px;
+  margin-bottom: 1em;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
