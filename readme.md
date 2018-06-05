@@ -1,10 +1,3 @@
-# Studio Broughton EOYS Wayfinding Webapp
+# VRC Online
 
-interface considerations:
-https://benfrain.com/the-ios-safari-menu-bar-is-hostile-to-web-apps-discuss/
-
-
-http://mongoosejs.com/docs/unstable/docs/browser.html
-
-
-https://github.com/vuejs/vue-touch
+Developed 2015-2018 by Carsten Rodin and the GSAPP Visual Resources Collection
