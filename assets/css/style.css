@@ -1,16 +1,7 @@
 body {
-
   margin: 0px;
-  font-family: "Courier New", courier, monspace;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.75em;
-}
-
-#header {
- background-color: black;
- color: white;
- padding: 1em;
- padding-top: 0.5em;
- padding-bottom: 0.5em;
 }
 
 #content-main {
@@ -37,8 +28,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Stardos Stencil', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 img, object {
